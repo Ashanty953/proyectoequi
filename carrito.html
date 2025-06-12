@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+</head>
+<body>
+
+  <h1>Tienda</h1>
+
+  <div class="producto">
+    <img src="poloa.jpg" alt="Chaqueta Plateada">
+    <p>Precio: $1300</p>
+    <button onclick="agregarAlCarrito('Producto A', 1300)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="hanfu.jpg" alt="Camiseta Morada">
+    <p>Precio: $1500</p>
+    <button onclick="agregarAlCarrito('Producto B', 1500)">Agregar al carrito</button>
+  </div>
+
+ <div class="producto">
+    <img src="goku2.jpg" alt="Sudadera Azul">
+    <p>Precio: $1650</p>
+    <button onclick="agregarAlCarrito('Producto A', 1650)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="amarro.jpg" alt="Chaqueta Plateada">
+    <p>Precio: $2000</p>
+    <button onclick="agregarAlCarrito('Producto B', 2000)">Agregar al carrito</button>
+  </div>
+  <div id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
+  </div>
+
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      total += precio;
+
+      const lista = document.getElementById('lista-carrito');
+      const item = document.createElement('li');
+      item.textContent = `${nombre} - $${precio}`;
+      lista.appendChild(item);
+
+      document.getElementById('total').textContent = total;
+    }
+
+  </script>
+ <nav>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Anterior</a>
+    <a href="pedidos.html">Siguiente</a>
+    <a href="carrito.html">carrito</a>
+  </nav>
+</body>
+</html>
