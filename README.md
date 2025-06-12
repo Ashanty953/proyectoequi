@@ -1,0 +1,1 @@
+# proyectoequi
